@@ -1,1 +1,6 @@
-<p>dashboard works!</p>
+<h1>Dashboard</h1>
+<ul>
+    <li *ngFor="let form of forms">
+        <form-preview [data]=form></form-preview>
+    </li>
+</ul>
