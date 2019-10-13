@@ -1,2 +1,3 @@
-<title-bar></title-bar>
-<dashboard></dashboard>
+<title-bar [context]="this"></title-bar>
+<dashboard *ngIf="view=='physician'"></dashboard>
+<form-create *ngIf="view=='patient'"></form-create>
