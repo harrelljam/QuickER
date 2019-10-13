@@ -2,7 +2,15 @@ export interface Form {
     id: string;
     firstname: string;
     lastname: string;
+    preferredname: string;
+    race: string;
     age: number;
-    gender: string;
+    sex: string;
+    tel: string;
+    address: string;
+    city: string;
+    state: string;
+    zip: string;
+    pain: number;
     symptoms: string;
 }

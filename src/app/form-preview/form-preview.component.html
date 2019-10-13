@@ -1,9 +1,10 @@
 <div class="card mx-2" style="width: 14rem; float: left">
     <div class="card-body">
-        <h5 class="card-title">{{data.lastname}}, {{data.firstname}}</h5>
+        <h5 class="card-title">{{data.preferredname}}</h5>
         <div class="card-text">
-            <p>{{data.age}} - {{data.gender}}</p>
-            <p>Symptoms:<br>{{data.symptoms}}</p>
+            <p>{{data.age}} - {{data.sex}}</p>
+            <p>Pain level: {{data.pain}}</p>
+            <p>Reason for visit:<br>{{data.symptoms}}</p>
         </div>
         <button class="btn btn-danger" (click)="delete()">Patient Cleared</button>
     </div>

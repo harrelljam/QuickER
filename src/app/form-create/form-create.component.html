@@ -6,21 +6,21 @@
     <div class="form-row">
     <div class="form-group col-md-3">
     <label for="inputFirst Name">First Name</label>
-    <input type="string" class="form-control" id="First Name">
+    <input name="inputFirstName" type="text" class="form-control" id="First Name" [(ngModel)]="form.firstname">
     </div>
     <div class="form-group col-md-3">
     <label for="inputLastName">Last Name</label>
-    <input type="string"  class="form-control" id="inputLastName">
+    <input name="inputLastName" type="text"  class="form-control" id="inputLastName" [(ngModel)]="form.lastname">
     </div>
     <div class="form-group col-md-3">
             <label for="inputPreferred Name">Preferred Name</label>
-            <input type="string" class="form-control" id="inputPreferred Name">
+            <input name="inputPreferredName" type="text" class="form-control" id="inputPreferred Name" [(ngModel)]="form.preferredname">
             </div>
     <form>
     <fieldset>
         <div class="form-group" style="width: 10rem;">
         <label for="Select">Race</label>
-        <select id="Select" class="form-control">
+        <select name="selectRace" [(ngModel)]="form.race" id="Select" class="form-control">
             <option>Select</option>
             <option>White</option>
             <option>American Indian or Alaska Native</option>
@@ -38,42 +38,42 @@
     </form>
     <div class="form-group col-md-1" style="width: 5rem;">
             <label for="inputAge">Age</label>
-            <input type="number" min=0 class="form-control" id="inputAge">
+            <input name="inputAge" type="number" min=0 class="form-control" id="inputAge" [(ngModel)]="form.age">
             </div>
     <div class="form-group col-md-2">
             <label for="inputSex">Sex</label>
-            <input type="string" class="form-control" id="inputSex">
+            <input name="inputSex" type="text" class="form-control" id="inputSex" [(ngModel)]="form.sex">
             </div>
     <div class="form-group col-md-2">
             <label for="inputTelephone">Telephone</label>
-            <input type="Telephone" class="form-control" id="inputTelephone" placeholder="Cell (   ) ___ - ____" >
+            <input name="inputTel" type="Telephone" class="form-control" id="inputTelephone" placeholder="Cell (   ) ___ - ____"  [(ngModel)]="form.tel">
             </div>
     </div>
     <div class="form-group">
     <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress">
+    <input name="inputAddress" type="text" class="form-control" id="inputAddress" [(ngModel)]="form.address">
     </div>
     <div class="form-group">
     </div>
     <div class="form-row">
     <div class="form-group col-md-6">
     <label for="inputCity">City</label>
-    <input type="text" class="form-control" id="inputCity">
+    <input name="inputCity" type="text" class="form-control" id="inputCity" [(ngModel)]="form.city">
     </div>
     <div class="form-group col-md-4">
     <label for="inputState">State</label>
-    <select id="inputState" class="form-control">
+    <select name="selectState" [(ngModel)]="form.state" id="inputState" class="form-control">
     <option selected>Choose...</option>
     <option>...</option>
     </select>
     </div>
     <div class="form-group col-md-2">
     <label for="inputZip">Zip</label>
-    <input type="text" class="form-control" id="inputZip">
+    <input name="inputZip" type="text" class="form-control" id="inputZip" [(ngModel)]="form.zip">
     </div>
     <div class="form-group" style= "width:77.25rem;">
             <label for="inputExplain:">Describe Reason For Your Visit:</label>
-            <input type="Explain" class="form-control" id="inputExplain:">
+            <input name="inputExplain" type="Explain" class="form-control" id="inputExplain:" [(ngModel)]="form.symptoms">
             </div>
     </div>
         <div class="form-group">
@@ -102,7 +102,7 @@
                             <div class="form-row align-items-center">
                               <div class="col-auto my-1">
                                 <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                <select name="selectPain" [(ngModel)]="form.pain" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
                                   <option selected>Select..</option>
                                   <option style="color:#005e80"value="0">Level 0</option>
                                   <option style="color:#0083b3"value="1">Level 1</option>
@@ -123,4 +123,4 @@
             </div>
         </div>
             </div>
-         
+<button class="btn btn-primary" (click)="submit()">Submit</button>

@@ -9,6 +9,7 @@ import { FormCreateComponent } from './form-create/form-create.component';
 import { AngularFireModule } from '@angular/fire';
 import { credentials } from '../../.env/creds';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     FormCreateComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AngularFireModule,
     AngularFireModule.initializeApp(credentials),
