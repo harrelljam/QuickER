@@ -7,7 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormPreviewComponent } from './form-preview/form-preview.component';
 import { FormCreateComponent } from './form-create/form-create.component';
 import { AngularFireModule } from '@angular/fire';
-import { credentials } from './models/creds';
+import { credentials } from '../../.env/creds';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
