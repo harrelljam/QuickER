@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Form } from '../models/form';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'dashboard',
@@ -8,33 +9,18 @@ import { Form } from '../models/form';
 })
 export class DashboardComponent implements OnInit {
 
-  forms = [
-    {
-      firstname:"John",
-      lastname:"Doe",
-      age:35,
-      gender:"Male",
-      symptoms:"Coughing"
-    } as Form,
-    {
-      firstname:"Jane",
-      lastname:"Doe",
-      age:40,
-      gender:"Female",
-      symptoms:"Bullet wound"
-    } as Form,
-    {
-      firstname:"John",
-      lastname:"Smith",
-      age:20,
-      gender:"Male",
-      symptoms:"Back pain"
-    } as Form
-  ];
+  forms: Form[];
 
-  constructor() { }
+  constructor(public db: AngularFirestore) { }
 
   ngOnInit() {
+    this.db.collection('patients').snapshotChanges().subscribe(collection=>{
+      this.forms = collection.map(doc=>{
+        const id = doc.payload.doc.id;
+        const data = doc.payload.doc.data();
+        return {id,...data} as Form;
+      });
+    })
   }
 
 }
