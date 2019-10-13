@@ -17,7 +17,9 @@ export class FormPreviewComponent implements OnInit {
   }
 
   delete(){
-    this.db.doc("patients/"+this.data.id).delete();
+    this.db.collection("patient_records").add(this.data).then(()=>{
+      this.db.doc("patients/"+this.data.id).delete();
+    });
   }
 
 }
