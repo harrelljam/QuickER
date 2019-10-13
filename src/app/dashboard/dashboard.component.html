@@ -1,6 +1,3 @@
-<h1>Dashboard</h1>
-<ul>
-    <li *ngFor="let form of forms">
-        <form-preview [data]=form></form-preview>
-    </li>
-</ul>
+<div class="container pt-4">
+    <form-preview *ngFor="let form of forms" [data]="form"></form-preview>
+</div>
